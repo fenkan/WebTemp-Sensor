@@ -2,18 +2,18 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 
-#define DHTPIN 4        // D2 på NodeMCU = GPIO4
-#define DHTTYPE DHT11   // WPSE311 fungerar som DHT11
+#define DHTPIN 4        // D2 on NodeMCU = GPIO4
+#define DHTTYPE DHT11   // WPSE311 works like DHT11
 
 DHT dht(DHTPIN, DHTTYPE);
 
-ESP8266WebServer server(80);  // Skapa webserver på port 80
+ESP8266WebServer server(80);  // Create a web server on port 80
 
 // Wifi uppgifter
 const char* ssid = ""; // Add you wifi ssid
 const char* password = ""; // Add your wifi password
 
-// Funktion som körs när någon går in på serverns IP
+//  Function that runs when someone accesses the server IP
 void handleRoot(){
   float temp = dht.readTemperature();
   float hum = dht.readHumidity();
@@ -37,7 +37,7 @@ void setup() {
   dht.begin();
 
 
-  // Anslut till WiFi
+  // Connect to WiFi
   WiFi.begin(ssid, password);
   Serial.print("Connecting to WiFi");
   while(WiFi.status() != WL_CONNECTED) {
@@ -51,7 +51,7 @@ Serial.println("✅ WiFi connected!");
 Serial.print("IP adress: ");
 Serial.println(WiFi.localIP());
 
-// Starta server
+// Start the server
 server.on("/", handleRoot);
 server.begin();
 Serial.println("🌐 Web server started");
