@@ -10,8 +10,8 @@ DHT dht(DHTPIN, DHTTYPE);
 ESP8266WebServer server(80);  // Skapa webserver på port 80
 
 // Wifi uppgifter
-const char* ssid = "Tele2_5fd0df";
-const char* password = "ttx392p7";
+const char* ssid = ""; // Add you wifi ssid
+const char* password = ""; // Add your wifi password
 
 // Funktion som körs när någon går in på serverns IP
 void handleRoot(){
