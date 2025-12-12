@@ -1,0 +1,5 @@
+*.ino linguist-language=C++
+*.cpp linguist-language=C++
+*.h linguist-language=C++
+*.html linguist-language=HTML
+*.css linguist-language=CSS
