@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WebTempSensor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      color: #333;
+      font-size: 36px;
+    }
+
+    #sensorBox {
+      font-size: 24px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    #details {
+      display: none;
+      margin-top: 15px;
+      font-size: 20px;
+      color: #555;
+    }
+
+    #clock {
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    #arrow {
+      font-size: 20px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Temperature & Humidity</h1>
+
+  <!-- Klocka -->
+  <div id="clock">--:--:--</div>
+
+  <!-- Klickbar sensorruta -->
+  <div id="sensorBox" onclick="toggleDetails()">
+
+    <p id="temp">Temperature: -- °C</p>
+    <p id="hum">Humidity: -- %</p>
+    <p id="arrow">⬇</p>
+
+    <!-- Kollapsbar vy -->
+    <div id="details">
+      <p id="maxTemp">Max Temp: -- °C</p>
+      <p id="minTemp">Min Temp: -- °C</p>
+    </div>
+  </div>
+<script src="js/site.js"></script>
+</body>
+</html>
